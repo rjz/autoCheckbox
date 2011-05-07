@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.autoCheckbox.min.js"></script>
+<script type="text/javascript">//<![CDATA[
+// kickstart!
+jQuery(document).ready(function(){
+	jQuery('input[type=checkbox]').autoCheckbox({defaultClass:'checkbox'});
+	jQuery('input[type=radio]').autoCheckbox({defaultClass:'radio'});
+})
+//]]></script>
+
+<link href="http://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+/**
+ *	Some default styling for our new checkbox elements. We'll need to style
+ *	two states -- when the box is checked (.checked) and when it isn't 
+ *	(no class). For both states, we'll need both a default appearance and
+ *	an appearance that's used when the checkbox is being hovered over/focused 
+ *	on. Here goes nothing:
+ */
+.checkbox,
+.radio {
+	width:48px;
+	height:48px;
+	display:inline-block;
+	background:url('images/sprites_48.png') 0 0 no-repeat;
+	cursor:pointer;
+}
+
+.checkbox:hover,
+.checkbox:focus { background-position:0 -48px; }
+
+.checkbox:active { background-position:0 -96px; }
+
+.checkbox.checked {	background-position:0 -144px; }
+
+.checkbox.checked:hover,
+.checkbox.checked:focus { background-position:0 -192px; }
+
+.checkbox.checked:active {	background-position:0 -240px; }
+
+.radio { background-position:-48px 0; }
+
+.radio:hover,
+.radio:focus { background-position:-48px -48px; }
+
+.radio:active { background-position:-48px -96px; }
+
+.radio.checked { background-position:-48px -144px; }
+
+.radio.checked:hover,
+.radio.checked:focus { background-position:-48px -192px; }
+
+.radio.checked:active { background-position:-48px -240px; }
+
+body {
+	font-family:'francois one', arial, sans-serif;
+	background-color:#bbb;
+	text-align:center;
+}
+h2 { 
+	font-weight:normal; 
+	color:#444;
+	text-shadow:0 1px 0 #ddd;
+}
+
+fieldset {
+	background-color:#eaeaea;
+	border-radius:15px;
+	border:1px solid #ddd;
+	box-shadow:3px 3px 5px #777;
+	margin:20px;
+	padding:20px;
+}
+</style>
+
+</head>
+<body>
+<form>
+
+	<h2>Checkbox test</h2>
+
+	<fieldset title="Checkbox test">
+		<input type="checkbox" name="checkbox" value="" />
+	</fieldset>
+
+	<h2>Radio button test</h2>
+
+	<fieldset title="Radio button test">
+		<input type="radio" name="checkbox2" value="" />
+		<input type="radio" name="checkbox2" value="" />
+		<input type="radio" name="checkbox2" value="" />
+	</fieldset>
+</form>
+</body>
+</html>
