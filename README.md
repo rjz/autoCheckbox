@@ -17,7 +17,8 @@ jQuery(document).ready(function(){
 	jQuery('input[type=checkbox]').autoCheckbox({defaultClass:'checkbox'});
 	jQuery('input[type=radio]').autoCheckbox({defaultClass:'radio'});
 })
-//]]></script>```
+//]]></script>
+```
 
 Add Styling for the new element classes:
 
@@ -32,7 +33,8 @@ Add Styling for the new element classes:
 }
 .checkbox.checked,
 .radio.checked { background-color: #555; }
-</style>```
+</style>
+```
 
 And you're off!
 
