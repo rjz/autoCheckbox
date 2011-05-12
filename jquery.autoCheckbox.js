@@ -1,15 +1,15 @@
 /**
  *	Generates a styleable link to replace each form element in the matched set. 
  *
- *	@author	RJ Zaworski <rj.zaworski@gmail.com>
- *
+ *	@author   RJ Zaworski <rj.zaworski@gmail.com>
+ *	@link     https://github.com/rjz/autoCheckbox
  */
 ;(function($){
 $.fn.autoCheckbox = function(settings){
 
 	// set up default settings
 	settings = settings || {};
-	
+
 	var o = $.extend({
 			defaultClass: 'autocheckbox'
 		}, settings);
@@ -47,16 +47,20 @@ $.fn.autoCheckbox = function(settings){
 				'aria-labelledby': $('label[for='+$input.attr('id')+']').id,
 				'aria-checked': "false"
 			};
+		
+		var onClick = function() {
+			$input.click();
+			update(name);
+			return false;			
+		}
 
 		for(keys in attributes) mask.attr(keys, attributes[keys]);
 	
 		mask.addClass(name + '-mask ' + o.defaultClass)
-			.click(function(){ 
-				$input.click();
-				update(name);
-				return false;
-			})
+			.click(onClick)
 			.insertAfter($input.hide());
+
+		$('label[for=' + $input.attr('id') + ']').click(onClick);
 
 		// update with the current state of the state
 		update(name);
