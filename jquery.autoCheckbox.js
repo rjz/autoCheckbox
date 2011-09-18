@@ -52,7 +52,7 @@ $.fn.autoCheckbox = function(settings){
 			$input.click();
 			update(name);
 			return false;			
-		}
+		};
 
 		for(keys in attributes) mask.attr(keys, attributes[keys]);
 	
